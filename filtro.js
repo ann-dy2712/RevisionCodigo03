@@ -8,10 +8,12 @@ const productos = [
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
 ]
 
-const li = document.getElementsByName("lista-de-productos")
+const li = document.getElementById("lista-de-productos") //se cambia el getElement, ya que ByName es por atributo
 const $i = document.querySelector('.input');
 
-for (let i = 0; i < productos.length; i++) {
+
+
+function crearProductoElemento(producto)  { //se elimina el bucle ya que se requiere una funcion paracrear los elementos html
   var d = document.createElement("div")
   d.classList.add("producto")
 
@@ -31,7 +33,9 @@ for (let i = 0; i < productos.length; i++) {
 displayProductos(productos)
 const botonDeFiltro = document.querySelector("button");
 
-botonDeFiltro.onclick = function() {
+
+
+function mostrarProductos(lista) { // Se elimina esta linea, estaba mal la sintaxis de la funcion
   while (li.firstChild) {
     li.removeChild(li.firstChild);
   }
@@ -54,10 +58,13 @@ botonDeFiltro.onclick = function() {
     d.appendChild(ti)
     d.appendChild(imagen)
   
-    li.appendChild(d)
+    return d; //se elimina li, se agrega un return, se eliminan los parentesis
   }
-}
 
-const filtrado = (productos = [], texto) => {
-  return productos.filter(item => item.tipo.includes(texto) || item.color.includes(texto));
-}  
+
+  function mostrarProductos(lista) { // se crea una funcion para mostrar los zapatos
+  while (li.firstChild) {
+    li.removeChild(li.firstChild);
+  }
+
+  }}

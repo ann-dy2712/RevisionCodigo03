@@ -9,16 +9,27 @@ input {
 }
 
 .producto {
-  width: 200px;
-  height: 200px;
+  width: 100%; 
+  height: 100%;
   margin: 10px;
   border: 2px solid black;
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   align-items: center;
 }
 
 .producto img {
   width: 70%;
   height: auto
+}
+
+.producto ul li img{
+  display: flex;
+  align-items: center;
+}
+
+.botfil {
+border-radius: 5px;
+background-color: cornflowerblue;
+
 }
